@@ -45,12 +45,14 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    // baseURL: '/',
+    baseURL: process.browser,
     // proxy: true,
   },
   
   serverMiddleware: [
-    { path: '/server-middleware-update', handler: '~/serverMiddleware/update' }
+    { path: '/server-middleware-post', handler: '~/serverMiddleware/post' },
+    { path: '/server-middleware-update', handler: '~/serverMiddleware/update' },
+    { path: '/server-middleware-delete', handler: '~/serverMiddleware/delete' }
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
